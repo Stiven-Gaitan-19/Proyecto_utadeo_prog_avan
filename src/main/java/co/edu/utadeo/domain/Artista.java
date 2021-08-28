@@ -1,6 +1,7 @@
 package co.edu.utadeo.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -14,6 +15,9 @@ public class Artista {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private GeneroMusical generoMusical;
+
+    @OneToMany(mappedBy = "desfile")
+    private List<Desfile> desfiles;
 
     public Integer getCode() {
         return code;

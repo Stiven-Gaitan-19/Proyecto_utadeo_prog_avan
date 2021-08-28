@@ -21,6 +21,9 @@ public class Pais {
     @OneToMany(mappedBy = "pais")
     private List<Modelo> modelos;
 
+    @OneToMany(mappedBy = "pais")
+    private List<Diseñador> diseñadores;
+
     public Integer getId() {
         return id;
     }

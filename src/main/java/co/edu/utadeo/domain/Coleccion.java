@@ -1,6 +1,7 @@
 package co.edu.utadeo.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -13,6 +14,9 @@ public class Coleccion {
 
     @Column(length = 100, nullable = false)
     private String nombre;
+
+    @OneToMany(mappedBy = "desfile")
+    private List<Desfile> desfiles;
 
     public Integer getId() {
         return id;
@@ -29,4 +33,6 @@ public class Coleccion {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+
 }
