@@ -13,19 +13,20 @@ public class Pabellon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String nombre;
 
     @Column(length = 10, nullable = false)
-    private Integer telefono;
-
+    private String telefono;
 
     @OneToMany(mappedBy = "pabellon")
     private List<Desfile> desfiles;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private EmpleadoDirectivo empleadoDirectivo;
 
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    private EmpleadoRaso empleadoRaso;
 
     public Integer getId() {
         return id;
@@ -43,12 +44,36 @@ public class Pabellon {
         this.nombre = nombre;
     }
 
-    public Integer getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public List<Desfile> getDesfiles() {
+        return desfiles;
+    }
+
+    public void setDesfiles(List<Desfile> desfiles) {
+        this.desfiles = desfiles;
+    }
+
+    public EmpleadoDirectivo getEmpleadoDirectivo() {
+        return empleadoDirectivo;
+    }
+
+    public void setEmpleadoDirectivo(EmpleadoDirectivo empleadoDirectivo) {
+        this.empleadoDirectivo = empleadoDirectivo;
+    }
+
+    public EmpleadoRaso getEmpleadoRaso() {
+        return empleadoRaso;
+    }
+
+    public void setEmpleadoRaso(EmpleadoRaso empleadoRaso) {
+        this.empleadoRaso = empleadoRaso;
     }
 
     @Override

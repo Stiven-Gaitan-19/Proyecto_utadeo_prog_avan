@@ -60,7 +60,6 @@ public class Foto {
         return "Foto{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", portafolio=" + portafolio +
                 '}';
     }
 }

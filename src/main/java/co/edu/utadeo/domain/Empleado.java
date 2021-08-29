@@ -5,8 +5,8 @@ import java.util.Objects;
 
 @Entity
 @Table
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Empleado {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,8 +15,8 @@ public class Empleado {
     @Column(nullable = false)
     private String nombre;
 
-    @Column(length = 10, nullable = false)
-    private Integer celular;
+    @Column(nullable = false, length = 10)
+    private String celular;
 
     @Column(length = 10, nullable = false)
     private Integer paga;
@@ -37,11 +37,11 @@ public class Empleado {
         this.nombre = nombre;
     }
 
-    public Integer getCelular() {
+    public String getCelular() {
         return celular;
     }
 
-    public void setCelular(Integer celular) {
+    public void setCelular(String celular) {
         this.celular = celular;
     }
 

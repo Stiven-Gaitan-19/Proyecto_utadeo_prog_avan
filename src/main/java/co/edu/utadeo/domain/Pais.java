@@ -55,4 +55,35 @@ public class Pais {
     public void setModelos(List<Modelo> modelos) {
         this.modelos = modelos;
     }
+
+    public List<Diseñador> getDiseñadores() {
+        return diseñadores;
+    }
+
+    public void setDiseñadores(List<Diseñador> diseñadores) {
+        this.diseñadores = diseñadores;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Pais pais = (Pais) o;
+
+        return id != null ? id.equals(pais.id) : pais.id == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Pais{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

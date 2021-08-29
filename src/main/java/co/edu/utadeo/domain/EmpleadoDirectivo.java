@@ -6,24 +6,18 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table
+@Table(name = "empleado_directivo")
+@PrimaryKeyJoinColumn(name = "carnet")
 public class EmpleadoDirectivo  extends  Empleado{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
     @Column(nullable = false)
     private String universidad;
 
+    @OneToMany(mappedBy = "empleadoDirectivo")
+    private List<Pabellon> pabellones;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    @OneToMany(mappedBy = "empleadoDirectivo")
+    private List<Eventos> eventos;
 
     public String getUniversidad() {
         return universidad;
@@ -33,32 +27,30 @@ public class EmpleadoDirectivo  extends  Empleado{
         this.universidad = universidad;
     }
 
-    @OneToMany(mappedBy = "empleadoDirectivo")
-    private List<Pabellon> pabellon;
-
-    @OneToMany(mappedBy = "empleadoDirectivo")
-    private List<Eventos> eventos;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EmpleadoDirectivo that = (EmpleadoDirectivo) o;
-        return id.equals(that.id);
+    public List<Pabellon> getPabellones() {
+        return pabellones;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public void setPabellones(List<Pabellon> pabellones) {
+        this.pabellones = pabellones;
+    }
+
+    public List<Eventos> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(List<Eventos> eventos) {
+        this.eventos = eventos;
     }
 
     @Override
     public String toString() {
         return "EmpleadoDirectivo{" +
-                "id=" + id +
-                ", universidad='" + universidad + '\'' +
-                ", pabellon=" + pabellon +
-                ", eventos=" + eventos +
+                "universidad='" + universidad + '\'' +
+                "carnet=" + getCarnet()+
+                ", nombre='" + getNombre() + '\'' +
+                ", celular=" + getCelular() +
+                ", paga=" + getPaga() +
                 '}';
     }
 }

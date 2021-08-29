@@ -61,7 +61,6 @@ public class GeneroMusical {
         return "GeneroMusical{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", artistas=" + artistas +
                 '}';
     }
 }

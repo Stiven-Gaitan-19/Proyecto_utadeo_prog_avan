@@ -19,6 +19,7 @@ public class Modelo {
     private String nombre;
 
     @Temporal(TemporalType.DATE)
+    @Column(nullable = false)
     private Date fechaNacimiento;
 
     @Column(length = 500)
@@ -154,11 +155,6 @@ public class Modelo {
                 ", fechaNacimiento=" + fechaNacimiento +
                 ", particularidades='" + particularidades + '\'' +
                 ", paga=" + paga +
-                ", pais=" + pais +
-                ", agencia=" + agencia +
-                ", portafolios=" + portafolios +
-                ", caracteristicas=" + caracteristicas +
-                ", apariciones=" + apariciones +
                 '}';
     }
 }

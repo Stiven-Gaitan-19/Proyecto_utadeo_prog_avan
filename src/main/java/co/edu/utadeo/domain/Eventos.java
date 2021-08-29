@@ -15,16 +15,18 @@ public class Eventos {
     private String nombre;
 
     @Temporal(TemporalType.DATE)
+    @Column(nullable = false)
     private Date fechaInicio;
 
     @Temporal(TemporalType.DATE)
+    @Column(nullable = false)
     private Date fechaFin;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
     private EmpleadoDirectivo empleadoDirectivo;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private EmpleadoRaso empleadoRaso;
+    @OneToMany(mappedBy = "evento")
+    private List<EmpleadoRaso> empleadoRasos;
 
     @OneToMany(mappedBy = "evento")
     private List<Desfile> desfiles;
@@ -62,6 +64,30 @@ public class Eventos {
         this.fechaFin = fechaFin;
     }
 
+    public EmpleadoDirectivo getEmpleadoDirectivo() {
+        return empleadoDirectivo;
+    }
+
+    public void setEmpleadoDirectivo(EmpleadoDirectivo empleadoDirectivo) {
+        this.empleadoDirectivo = empleadoDirectivo;
+    }
+
+    public List<EmpleadoRaso> getEmpleadoRasos() {
+        return empleadoRasos;
+    }
+
+    public void setEmpleadoRasos(List<EmpleadoRaso> empleadoRasos) {
+        this.empleadoRasos = empleadoRasos;
+    }
+
+    public List<Desfile> getDesfiles() {
+        return desfiles;
+    }
+
+    public void setDesfiles(List<Desfile> desfiles) {
+        this.desfiles = desfiles;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -82,9 +108,6 @@ public class Eventos {
                 ", nombre='" + nombre + '\'' +
                 ", fechaInicio=" + fechaInicio +
                 ", fechaFin=" + fechaFin +
-                ", empleadoDirectivo=" + empleadoDirectivo +
-                ", empleadoRaso=" + empleadoRaso +
-                ", desfiles=" + desfiles +
                 '}';
     }
 }

@@ -72,7 +72,6 @@ public class Caracteristica {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", modelo=" + modelo +
                 '}';
     }
 }

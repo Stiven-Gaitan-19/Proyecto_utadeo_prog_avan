@@ -16,6 +16,9 @@ public class Aparicion {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Modelo modelo;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Desfile desfile;
+
     public Integer getId() {
         return id;
     }
@@ -38,5 +41,21 @@ public class Aparicion {
 
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
+    }
+
+    public Desfile getDesfile() {
+        return desfile;
+    }
+
+    public void setDesfile(Desfile desfile) {
+        this.desfile = desfile;
+    }
+
+    @Override
+    public String toString() {
+        return "Aparicion{" +
+                "id=" + id +
+                ", prenda='" + prenda + '\'' +
+                '}';
     }
 }

@@ -122,8 +122,6 @@ public class Agencia {
                 ", correo='" + correo + '\'' +
                 ", dueño='" + dueño + '\'' +
                 ", agenciaPadre='" + agenciaPadre + '\'' +
-                ", pais=" + pais +
-                ", modelos=" + modelos +
                 '}';
     }
 }

@@ -2,6 +2,7 @@ package co.edu.utadeo.domain;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,12 +13,12 @@ public class Desfile {
     @Column(length = 10)
     private Integer code;
 
-
     @Temporal(TemporalType.DATE)
+    @Column(nullable = false)
     private Date fecha;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Eventos eventos;
+    private Eventos evento;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Diseñador diseñador;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -25,7 +26,9 @@ public class Desfile {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Artista artista;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Coleccion  coleccion;
+    private Coleccion coleccion;
+    @OneToMany(mappedBy = "desfile")
+    private List<Aparicion> apariciones;
 
     public Integer getCode() {
         return code;
@@ -41,6 +44,54 @@ public class Desfile {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public Eventos getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Eventos evento) {
+        this.evento = evento;
+    }
+
+    public Diseñador getDiseñador() {
+        return diseñador;
+    }
+
+    public void setDiseñador(Diseñador diseñador) {
+        this.diseñador = diseñador;
+    }
+
+    public Pabellon getPabellon() {
+        return pabellon;
+    }
+
+    public void setPabellon(Pabellon pabellon) {
+        this.pabellon = pabellon;
+    }
+
+    public Artista getArtista() {
+        return artista;
+    }
+
+    public void setArtista(Artista artista) {
+        this.artista = artista;
+    }
+
+    public Coleccion getColeccion() {
+        return coleccion;
+    }
+
+    public void setColeccion(Coleccion coleccion) {
+        this.coleccion = coleccion;
+    }
+
+    public List<Aparicion> getApariciones() {
+        return apariciones;
+    }
+
+    public void setApariciones(List<Aparicion> apariciones) {
+        this.apariciones = apariciones;
     }
 
     @Override

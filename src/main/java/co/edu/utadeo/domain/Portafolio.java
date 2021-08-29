@@ -86,8 +86,6 @@ public class Portafolio {
                 "id=" + id +
                 ", objetivo='" + objetivo + '\'' +
                 ", añoCreacion=" + añoCreacion +
-                ", fotos=" + fotos +
-                ", modelo=" + modelo +
                 '}';
     }
 }

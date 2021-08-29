@@ -16,7 +16,7 @@ public class Artista {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private GeneroMusical generoMusical;
 
-    @OneToMany(mappedBy = "desfile")
+    @OneToMany(mappedBy = "artista")
     private List<Desfile> desfiles;
 
     public Integer getCode() {
@@ -41,5 +41,36 @@ public class Artista {
 
     public void setGeneroMusical(GeneroMusical generoMusical) {
         this.generoMusical = generoMusical;
+    }
+
+    public List<Desfile> getDesfiles() {
+        return desfiles;
+    }
+
+    public void setDesfiles(List<Desfile> desfiles) {
+        this.desfiles = desfiles;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Artista artista = (Artista) o;
+
+        return code != null ? code.equals(artista.code) : artista.code == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return code != null ? code.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Artista{" +
+                "code=" + code +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }

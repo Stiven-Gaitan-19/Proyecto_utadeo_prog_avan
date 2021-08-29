@@ -15,7 +15,7 @@ public class Coleccion {
     @Column(length = 100, nullable = false)
     private String nombre;
 
-    @OneToMany(mappedBy = "desfile")
+    @OneToMany(mappedBy = "coleccion")
     private List<Desfile> desfiles;
 
     public Integer getId() {
@@ -34,5 +34,19 @@ public class Coleccion {
         this.nombre = nombre;
     }
 
+    public List<Desfile> getDesfiles() {
+        return desfiles;
+    }
 
+    public void setDesfiles(List<Desfile> desfiles) {
+        this.desfiles = desfiles;
+    }
+
+    @Override
+    public String toString() {
+        return "Coleccion{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }
