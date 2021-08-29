@@ -1,7 +1,6 @@
 package co.edu.utadeo.domain;
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name="empleado_raso")
@@ -12,7 +11,7 @@ public class EmpleadoRaso extends Empleado{
     private List<Pabellon> pabellones;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Eventos evento;
+    private Evento evento;
 
     public List<Pabellon> getPabellones() {
         return pabellones;
@@ -22,11 +21,11 @@ public class EmpleadoRaso extends Empleado{
         this.pabellones = pabellones;
     }
 
-    public Eventos getEvento() {
+    public Evento getEvento() {
         return evento;
     }
 
-    public void setEvento(Eventos evento) {
+    public void setEvento(Evento evento) {
         this.evento = evento;
     }
 

@@ -3,7 +3,6 @@ package co.edu.utadeo.domain;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "empleado_directivo")
@@ -17,7 +16,7 @@ public class EmpleadoDirectivo  extends  Empleado{
     private List<Pabellon> pabellones;
 
     @OneToMany(mappedBy = "empleadoDirectivo")
-    private List<Eventos> eventos;
+    private List<Evento> eventos;
 
     public String getUniversidad() {
         return universidad;
@@ -35,11 +34,11 @@ public class EmpleadoDirectivo  extends  Empleado{
         this.pabellones = pabellones;
     }
 
-    public List<Eventos> getEventos() {
+    public List<Evento> getEventos() {
         return eventos;
     }
 
-    public void setEventos(List<Eventos> eventos) {
+    public void setEventos(List<Evento> eventos) {
         this.eventos = eventos;
     }
 

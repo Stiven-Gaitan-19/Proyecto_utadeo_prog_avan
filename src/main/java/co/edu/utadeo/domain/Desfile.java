@@ -18,9 +18,9 @@ public class Desfile {
     private Date fecha;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Eventos evento;
+    private Evento evento;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Diseñador diseñador;
+    private Disenador diseñador;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Pabellon pabellon;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -46,19 +46,19 @@ public class Desfile {
         this.fecha = fecha;
     }
 
-    public Eventos getEvento() {
+    public Evento getEvento() {
         return evento;
     }
 
-    public void setEvento(Eventos evento) {
+    public void setEvento(Evento evento) {
         this.evento = evento;
     }
 
-    public Diseñador getDiseñador() {
+    public Disenador getDiseñador() {
         return diseñador;
     }
 
-    public void setDiseñador(Diseñador diseñador) {
+    public void setDiseñador(Disenador diseñador) {
         this.diseñador = diseñador;
     }
 

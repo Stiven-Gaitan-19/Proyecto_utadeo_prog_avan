@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table
-public class Diseñador {
+public class Disenador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,11 @@ public class Diseñador {
     @Column(nullable = false)
     private String nombre;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Pais pais;
+
+    @OneToMany(mappedBy = "diseñador")
+    private List<Desfile> desfiles;
 
     public Integer getId() {
         return id;
@@ -43,17 +48,27 @@ public class Diseñador {
         this.nombre = nombre;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Pais pais;
+    public Pais getPais() {
+        return pais;
+    }
 
-    @OneToMany(mappedBy = "diseñador")
-    private List<Desfile> desfiles;
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
+
+    public List<Desfile> getDesfiles() {
+        return desfiles;
+    }
+
+    public void setDesfiles(List<Desfile> desfiles) {
+        this.desfiles = desfiles;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Diseñador diseñador = (Diseñador) o;
+        Disenador diseñador = (Disenador) o;
         return id.equals(diseñador.id);
     }
 
@@ -68,8 +83,6 @@ public class Diseñador {
                 "id=" + id +
                 ", pasaporte=" + pasaporte +
                 ", nombre='" + nombre + '\'' +
-                ", pais=" + pais +
-                ", desfiles=" + desfiles +
                 '}';
     }
 }

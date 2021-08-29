@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table
-public class Eventos {
+public class Evento {
     @Id
     @Column(length = 10)
     private Integer code;
@@ -92,7 +92,7 @@ public class Eventos {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Eventos eventos = (Eventos) o;
+        Evento eventos = (Evento) o;
         return code.equals(eventos.code);
     }
 
