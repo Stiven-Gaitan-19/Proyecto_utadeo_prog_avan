@@ -25,6 +25,13 @@
         <mapping class="co.edu.utadeo.domain.GeneroMusical"/>
         <mapping class="co.edu.utadeo.domain.Modelo"/>
         <mapping class="co.edu.utadeo.domain.Pais"/>
+        <mapping class="co.edu.utadeo.domain.Desfile"/>
+        <mapping class="co.edu.utadeo.domain.Disenador"/>
+        <mapping class="co.edu.utadeo.domain.Empleado"/>
+        <mapping class="co.edu.utadeo.domain.EmpleadoDirectivo"/>
+        <mapping class="co.edu.utadeo.domain.EmpleadoRaso"/>
+        <mapping class="co.edu.utadeo.domain.Evento"/>
         <mapping class="co.edu.utadeo.domain.Portafolio"/>
+        <mapping class="co.edu.utadeo.domain.Pabellon"/>
     </session-factory>
 </hibernate-configuration>
