@@ -22,7 +22,7 @@ public class Pais {
     private List<Modelo> modelos;
 
     @OneToMany(mappedBy = "pais")
-    private List<Disenador> diseÃ±adores;
+    private List<Disenador> diseñadores;
 
     public Integer getId() {
         return id;
@@ -56,12 +56,12 @@ public class Pais {
         this.modelos = modelos;
     }
 
-    public List<Disenador> getDiseÃ±adores() {
-        return diseÃ±adores;
+    public List<Disenador> getDiseñadores() {
+        return diseñadores;
     }
 
-    public void setDiseÃ±adores(List<Disenador> diseÃ±adores) {
-        this.diseÃ±adores = diseÃ±adores;
+    public void setDiseñadores(List<Disenador> diseñadores) {
+        this.diseñadores = diseñadores;
     }
 
     @Override

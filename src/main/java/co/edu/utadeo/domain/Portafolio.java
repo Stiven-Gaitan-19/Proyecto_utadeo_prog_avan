@@ -17,7 +17,7 @@ public class Portafolio {
 
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
-    private Date aÃ±oCreacion;
+    private Date añoCreacion;
 
     @OneToMany(mappedBy = "portafolio")
     private List<Foto> fotos;
@@ -41,12 +41,12 @@ public class Portafolio {
         this.objetivo = objetivo;
     }
 
-    public Date getAÃ±oCreacion() {
-        return aÃ±oCreacion;
+    public Date getAñoCreacion() {
+        return añoCreacion;
     }
 
-    public void setAÃ±oCreacion(Date aÃ±oCreacion) {
-        this.aÃ±oCreacion = aÃ±oCreacion;
+    public void setAñoCreacion(Date añoCreacion) {
+        this.añoCreacion = añoCreacion;
     }
 
     public List<Foto> getFotos() {
@@ -85,7 +85,7 @@ public class Portafolio {
         return "Portafolio{" +
                 "id=" + id +
                 ", objetivo='" + objetivo + '\'' +
-                ", aÃ±oCreacion=" + aÃ±oCreacion +
+                ", añoCreacion=" + añoCreacion +
                 '}';
     }
 }

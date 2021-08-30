@@ -17,13 +17,13 @@ public class Agencia {
 
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
-    private Date aÃ±oCreacion;
+    private Date añoCreacion;
 
     @Column(unique = true, nullable = false)
     private String correo;
 
     @Column(nullable = false)
-    private String dueÃ±o;
+    private String dueño;
 
     @Column(nullable = false)
     private String agenciaPadre;
@@ -50,12 +50,12 @@ public class Agencia {
         this.nombre = nombre;
     }
 
-    public Date getAÃ±oCreacion() {
-        return aÃ±oCreacion;
+    public Date getAñoCreacion() {
+        return añoCreacion;
     }
 
-    public void setAÃ±oCreacion(Date aÃ±oCreacion) {
-        this.aÃ±oCreacion = aÃ±oCreacion;
+    public void setAñoCreacion(Date añoCreacion) {
+        this.añoCreacion = añoCreacion;
     }
 
     public String getCorreo() {
@@ -66,12 +66,12 @@ public class Agencia {
         this.correo = correo;
     }
 
-    public String getDueÃ±o() {
-        return dueÃ±o;
+    public String getDueño() {
+        return dueño;
     }
 
-    public void setDueÃ±o(String dueÃ±o) {
-        this.dueÃ±o = dueÃ±o;
+    public void setDueño(String dueño) {
+        this.dueño = dueño;
     }
 
     public String getAgenciaPadre() {
@@ -118,9 +118,9 @@ public class Agencia {
         return "Agencia{" +
                 "code=" + code +
                 ", nombre='" + nombre + '\'' +
-                ", aÃ±oCreacion=" + aÃ±oCreacion +
+                ", añoCreacion=" + añoCreacion +
                 ", correo='" + correo + '\'' +
-                ", dueÃ±o='" + dueÃ±o + '\'' +
+                ", dueño='" + dueño + '\'' +
                 ", agenciaPadre='" + agenciaPadre + '\'' +
                 '}';
     }
