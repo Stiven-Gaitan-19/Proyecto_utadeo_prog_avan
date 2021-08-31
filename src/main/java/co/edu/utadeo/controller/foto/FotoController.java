@@ -1,49 +1,44 @@
-package co.edu.utadeo.controller.artista;
+package co.edu.utadeo.controller.foto;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.Color;
 import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.SystemColor;
-
-import javax.swing.JTextField;
-import javax.swing.JToolBar;
-import javax.swing.JCheckBoxMenuItem;
-import com.toedter.calendar.JDayChooser;
-import com.toedter.calendar.JDateChooser;
-import javax.swing.JList;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-
-import com.toedter.components.JSpinField;
-import javax.swing.JSlider;
-import javax.swing.JComboBox;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
+import javax.swing.JTree;
+import java.awt.Font;
+import javax.swing.JToggleButton;
+import javax.swing.JTable;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
-public class ArtistaEditController extends JFrame {
+import java.awt.SystemColor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JDesktopPane;
 
-	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+public class FotoController extends JFrame {
+	private JTable table;
 
 	/**
 	 * Create the frame.
 	 */
-	public ArtistaEditController() {
+	public FotoController() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 582, 490);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
-	    JMenuBar menuBar = new JMenuBar();
+		JMenuBar menuBar = new JMenuBar();
 		menuBar.setEnabled(false);
 		menuBar.setBackground(SystemColor.control);
 		setJMenuBar(menuBar);
@@ -114,51 +109,60 @@ public class ArtistaEditController extends JFrame {
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Portafolio");
 		mntmNewMenuItem_3.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_3);
-		contentPane.setLayout(null);
-	    
-		JLabel lblNewLabel = new JLabel("Editar-Crear Artistas");
-		lblNewLabel.setBounds(209, 11, 200, 37);
-		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 18));
-		contentPane.add(lblNewLabel);
+		getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("Codigo");
-		lblNewLabel_1.setBounds(110, 104, 65, 14);
-		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel_1);
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(0, 0, 566, 430);
+		getContentPane().add(panel);
+		panel.setLayout(null);
 		
-		JLabel lblNewLabel_2 = new JLabel("Genero Musical");
-		lblNewLabel_2.setBounds(107, 253, 106, 14);
-		lblNewLabel_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel_2);
+		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2.setBounds(416, 368, 89, 23);
+		panel.add(btnNewButton_2);
+		btnNewButton_2.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		
-		JLabel lblNewLabel_3 = new JLabel("Nombre");
-		lblNewLabel_3.setBounds(110, 177, 57, 14);
-		lblNewLabel_3.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel_3);
-		
-		JButton btnNewButton = new JButton("Guardar");
-		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton.setBounds(123, 325, 90, 30);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Cancelar");
+		JButton btnNewButton_1 = new JButton("Editar\r\n");
+		btnNewButton_1.setBounds(241, 368, 89, 23);
+		panel.add(btnNewButton_1);
 		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(353, 325, 89, 30);
-		contentPane.add(btnNewButton_1);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		comboBox.setBounds(242, 245, 200, 30);
-		contentPane.add(comboBox);
+		JButton btnNewButton = new JButton("Agregar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			JOptionPane.showMessageDialog(null, "Evento agregado");
+			}
+		});
+		btnNewButton.setBounds(63, 368, 89, 23);
+		panel.add(btnNewButton);
+		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		
-		textField = new JTextField();
-		textField.setBounds(242, 97, 200, 30);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		JLabel lblNewLabel = new JLabel("The Star Rover - Foto");
+		lblNewLabel.setBounds(176, 35, 220, 52);
+		panel.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 22));
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(242, 170, 200, 30);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		table = new JTable();
+		table.setBounds(63, 267, 370, -204);
+		panel.add(table);
+		
+		
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
 	}
 }

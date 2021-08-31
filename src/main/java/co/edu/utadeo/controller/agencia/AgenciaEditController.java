@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Font;
 import java.awt.SystemColor;
 
@@ -139,7 +138,7 @@ public class AgenciaEditController extends JFrame {
 		contentPane.add(dateChooser);
 		
 		JLabel lblNewLabel_2 = new JLabel("Fecha Creaci\u00F3n");
-		lblNewLabel_2.setBounds(99, 157, 106, 14);
+		lblNewLabel_2.setBounds(99, 161, 106, 14);
 		lblNewLabel_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_2);
 		

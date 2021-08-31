@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Font;
 import java.awt.SystemColor;
 
@@ -140,12 +139,12 @@ public class EventoEditController extends JFrame {
 		contentPane.add(dateChooser_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Fecha Inicio");
-		lblNewLabel_2.setBounds(99, 157, 90, 14);
+		lblNewLabel_2.setBounds(99, 167, 90, 14);
 		lblNewLabel_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_4 = new JLabel("Fecha Fin");
-		lblNewLabel_4.setBounds(99, 199, 76, 14);
+		lblNewLabel_4.setBounds(99, 209, 76, 14);
 		lblNewLabel_4.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_4);
 		
@@ -169,10 +168,12 @@ public class EventoEditController extends JFrame {
 		contentPane.add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("Guardar");
+		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		btnNewButton.setBounds(124, 320, 90, 30);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Cancelar");
+		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		btnNewButton_1.setBounds(327, 320, 89, 30);
 		contentPane.add(btnNewButton_1);
 	}

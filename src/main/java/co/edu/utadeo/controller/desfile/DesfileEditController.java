@@ -1,4 +1,4 @@
-package co.edu.utadeo.controller.artista;
+package co.edu.utadeo.controller.desfile;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -27,16 +27,15 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 
-public class ArtistaEditController extends JFrame {
+public class DesfileEditController extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Create the frame.
 	 */
-	public ArtistaEditController() {
+	public DesfileEditController() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 582, 490);
 		contentPane = new JPanel();
@@ -116,49 +115,83 @@ public class ArtistaEditController extends JFrame {
 		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane.setLayout(null);
 	    
-		JLabel lblNewLabel = new JLabel("Editar-Crear Artistas");
-		lblNewLabel.setBounds(209, 11, 200, 37);
+		JLabel lblNewLabel = new JLabel("Editar-Crear Desfile");
+		lblNewLabel.setBounds(194, 11, 230, 37);
 		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 18));
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Codigo");
-		lblNewLabel_1.setBounds(110, 104, 65, 14);
+		lblNewLabel_1.setBounds(116, 66, 65, 14);
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Genero Musical");
-		lblNewLabel_2.setBounds(107, 253, 106, 14);
-		lblNewLabel_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("Nombre");
-		lblNewLabel_3.setBounds(110, 177, 57, 14);
-		lblNewLabel_3.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel_3);
-		
 		JButton btnNewButton = new JButton("Guardar");
 		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton.setBounds(123, 325, 90, 30);
+		btnNewButton.setBounds(128, 369, 90, 30);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Cancelar");
 		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(353, 325, 89, 30);
+		btnNewButton_1.setBounds(354, 369, 89, 30);
 		contentPane.add(btnNewButton_1);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		comboBox.setBounds(242, 245, 200, 30);
-		contentPane.add(comboBox);
-		
 		textField = new JTextField();
-		textField.setBounds(242, 97, 200, 30);
+		textField.setBounds(252, 59, 200, 30);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(242, 170, 200, 30);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(252, 100, 200, 30);
+		contentPane.add(dateChooser);
+		
+		JLabel lblNewLabel_2 = new JLabel("Fecha");
+		lblNewLabel_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(116, 105, 46, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Evento");
+		lblNewLabel_2_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_2_1.setBounds(116, 148, 46, 14);
+		contentPane.add(lblNewLabel_2_1);
+		
+		JLabel lblNewLabel_2_2 = new JLabel("Dise\u00F1ador");
+		lblNewLabel_2_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_2_2.setBounds(116, 189, 80, 14);
+		contentPane.add(lblNewLabel_2_2);
+		
+		JLabel lblNewLabel_2_3 = new JLabel("Pabellon");
+		lblNewLabel_2_3.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_2_3.setBounds(116, 227, 80, 14);
+		contentPane.add(lblNewLabel_2_3);
+		
+		JLabel lblNewLabel_2_4 = new JLabel("Artista");
+		lblNewLabel_2_4.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_2_4.setBounds(116, 268, 46, 14);
+		contentPane.add(lblNewLabel_2_4);
+		
+		JLabel lblNewLabel_2_5 = new JLabel("Coleccion");
+		lblNewLabel_2_5.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_2_5.setBounds(116, 309, 65, 14);
+		contentPane.add(lblNewLabel_2_5);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(252, 141, 202, 30);
+		contentPane.add(comboBox);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(252, 182, 202, 30);
+		contentPane.add(comboBox_1);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setBounds(252, 220, 202, 30);
+		contentPane.add(comboBox_2);
+		
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setBounds(252, 261, 202, 30);
+		contentPane.add(comboBox_3);
+		
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setBounds(252, 302, 202, 30);
+		contentPane.add(comboBox_4);
 	}
 }

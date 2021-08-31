@@ -1,4 +1,4 @@
-package co.edu.utadeo.controller.artista;
+package co.edu.utadeo.controller.empleadoraso;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -27,16 +27,15 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 
-public class ArtistaEditController extends JFrame {
+public class EmpleadoRasoEditController extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Create the frame.
 	 */
-	public ArtistaEditController() {
+	public EmpleadoRasoEditController() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 582, 490);
 		contentPane = new JPanel();
@@ -116,25 +115,15 @@ public class ArtistaEditController extends JFrame {
 		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane.setLayout(null);
 	    
-		JLabel lblNewLabel = new JLabel("Editar-Crear Artistas");
-		lblNewLabel.setBounds(209, 11, 200, 37);
+		JLabel lblNewLabel = new JLabel("Editar-Crear EmpleadoRaso");
+		lblNewLabel.setBounds(180, 33, 272, 37);
 		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 18));
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Codigo");
-		lblNewLabel_1.setBounds(110, 104, 65, 14);
+		JLabel lblNewLabel_1 = new JLabel("Carne");
+		lblNewLabel_1.setBounds(106, 171, 65, 14);
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Genero Musical");
-		lblNewLabel_2.setBounds(107, 253, 106, 14);
-		lblNewLabel_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("Nombre");
-		lblNewLabel_3.setBounds(110, 177, 57, 14);
-		lblNewLabel_3.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel_3);
 		
 		JButton btnNewButton = new JButton("Guardar");
 		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -146,19 +135,18 @@ public class ArtistaEditController extends JFrame {
 		btnNewButton_1.setBounds(353, 325, 89, 30);
 		contentPane.add(btnNewButton_1);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		comboBox.setBounds(242, 245, 200, 30);
-		contentPane.add(comboBox);
-		
 		textField = new JTextField();
-		textField.setBounds(242, 97, 200, 30);
+		textField.setBounds(242, 164, 200, 30);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(242, 170, 200, 30);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		JLabel lblNewLabel_1_1 = new JLabel("Evento");
+		lblNewLabel_1_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_1_1.setBounds(106, 225, 76, 14);
+		contentPane.add(lblNewLabel_1_1);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(242, 222, 200, 30);
+		contentPane.add(comboBox);
 	}
 }
