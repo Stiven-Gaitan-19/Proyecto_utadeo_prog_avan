@@ -20,7 +20,7 @@ public class Desfile {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Evento evento;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Disenador diseñador;
+    private Disenador disenador;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Pabellon pabellon;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -54,12 +54,12 @@ public class Desfile {
         this.evento = evento;
     }
 
-    public Disenador getDiseñador() {
-        return diseñador;
+    public Disenador getDisenador() {
+        return disenador;
     }
 
-    public void setDiseñador(Disenador diseñador) {
-        this.diseñador = diseñador;
+    public void setDisenador(Disenador disenador) {
+        this.disenador = disenador;
     }
 
     public Pabellon getPabellon() {

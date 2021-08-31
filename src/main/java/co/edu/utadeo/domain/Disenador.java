@@ -21,7 +21,7 @@ public class Disenador {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Pais pais;
 
-    @OneToMany(mappedBy = "diseñador")
+    @OneToMany(mappedBy = "disenador")
     private List<Desfile> desfiles;
 
     public Integer getId() {
@@ -68,8 +68,8 @@ public class Disenador {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Disenador diseñador = (Disenador) o;
-        return id.equals(diseñador.id);
+        Disenador disenador = (Disenador) o;
+        return id.equals(disenador.id);
     }
 
     @Override
