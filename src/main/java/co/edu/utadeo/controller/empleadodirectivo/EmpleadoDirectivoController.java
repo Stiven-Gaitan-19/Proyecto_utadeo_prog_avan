@@ -77,9 +77,13 @@ public class EmpleadoDirectivoController extends JFrame {
 		mntmNewMenuItem_10.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_10);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Empleado");
-		mntmNewMenuItem.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		mnNewMenu.add(mntmNewMenuItem);
+		JMenuItem mntmNewMenuItemEmpDirec = new JMenuItem("Empleado Directivo");
+		mntmNewMenuItemEmpDirec.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		mnNewMenu.add(mntmNewMenuItemEmpDirec);
+
+		JMenuItem mntmNewMenuItemEmpRaso = new JMenuItem("Empleado Raso");
+		mntmNewMenuItemEmpRaso.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		mnNewMenu.add(mntmNewMenuItemEmpRaso);
 		
 		JMenuItem mntmNewMenuItem_11 = new JMenuItem("Evento");
 		mntmNewMenuItem_11.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
