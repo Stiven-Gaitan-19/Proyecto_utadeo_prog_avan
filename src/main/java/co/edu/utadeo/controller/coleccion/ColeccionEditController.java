@@ -20,17 +20,20 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import com.toedter.components.JSpinField;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ColeccionEditController extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtNombre;
 
 	/**
 	 * Create the frame.
@@ -129,19 +132,37 @@ public class ColeccionEditController extends JFrame {
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("Guardar");
-		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton.setBounds(123, 325, 90, 30);
-		contentPane.add(btnNewButton);
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Coleccion agregado");
+			}
+		});
+		btnGuardar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnGuardar.setBounds(123, 325, 90, 30);
+		contentPane.add(btnGuardar);
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(353, 325, 89, 30);
-		contentPane.add(btnNewButton_1);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 JFrame frame = new ColeccionController();
+	                frame.setSize(582,490);
+	                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.setLocationRelativeTo(null);
+	                frame.setVisible(true);
+	                close();
+			}
+		});
+		btnCancelar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnCancelar.setBounds(353, 325, 89, 30);
+		contentPane.add(btnCancelar);
 		
-		textField = new JTextField();
-		textField.setBounds(242, 164, 200, 30);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtNombre = new JTextField();
+		txtNombre.setBounds(242, 164, 200, 30);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
+	}
+	private void close() {
+		this.dispose();
 	}
 }

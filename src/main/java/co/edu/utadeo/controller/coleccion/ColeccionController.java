@@ -30,6 +30,7 @@ import javax.swing.JDesktopPane;
 
 public class ColeccionController extends JFrame {
 	private JTable table;
+	private JButton btnEliminar;
 
 	/**
 	 * Create the frame.
@@ -121,25 +122,42 @@ public class ColeccionController extends JFrame {
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton_2 = new JButton("Eliminar");
-		btnNewButton_2.setBounds(416, 368, 89, 23);
-		panel.add(btnNewButton_2);
-		btnNewButton_2.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(416, 368, 89, 23);
+		panel.add(btnEliminar);
+		btnEliminar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		
-		JButton btnNewButton_1 = new JButton("Editar\r\n");
-		btnNewButton_1.setBounds(241, 368, 89, 23);
-		panel.add(btnNewButton_1);
-		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		
-		JButton btnNewButton = new JButton("Agregar");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnEditar = new JButton("Editar\r\n");
+		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(null, "Evento agregado");
+				 JFrame frame = new ColeccionEditController();
+	                frame.setSize(582,490);
+	                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.setLocationRelativeTo(null);
+	                frame.setVisible(true);
+	                close();
+
 			}
 		});
-		btnNewButton.setBounds(63, 368, 89, 23);
-		panel.add(btnNewButton);
-		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnEditar.setBounds(241, 368, 89, 23);
+		panel.add(btnEditar);
+		btnEditar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		
+		JButton btnAgregar = new JButton("Agregar");
+		btnAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame frame = new ColeccionEditController();
+                frame.setSize(582,490);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                close();
+			
+			}
+		});
+		btnAgregar.setBounds(63, 368, 89, 23);
+		panel.add(btnAgregar);
+		btnAgregar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		
 		JLabel lblNewLabel = new JLabel("The Star Rover - Coleccion");
 		lblNewLabel.setBounds(152, 30, 311, 52);
@@ -152,6 +170,11 @@ public class ColeccionController extends JFrame {
 		
 		
 	}
+	
+	private void close() {
+		this.dispose();
+	}
+	
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {

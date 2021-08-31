@@ -131,6 +131,16 @@ public class PabellonController extends JFrame {
 		btnEliminar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		
 		JButton btnEditar = new JButton("Editar\r\n");
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame frame = new PabellonEditController();
+                frame.setSize(582,490);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                close();
+			}
+		});
 		btnEditar.setBounds(241, 368, 89, 23);
 		panel.add(btnEditar);
 		btnEditar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -138,7 +148,12 @@ public class PabellonController extends JFrame {
 		JButton btnAgregar = new JButton("Agregar");
 		btnAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(null, "Evento agregado");
+				JFrame frame = new PabellonEditController();
+                frame.setSize(582,490);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                close();
 			}
 		});
 		btnAgregar.setBounds(63, 368, 89, 23);
@@ -152,6 +167,11 @@ public class PabellonController extends JFrame {
 		
 		
 	}
+	
+	private void close() {
+		this.dispose();
+	}
+	
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {

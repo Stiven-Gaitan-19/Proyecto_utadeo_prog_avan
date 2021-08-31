@@ -20,12 +20,15 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import com.toedter.components.JSpinField;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DisenadorEditController extends JFrame {
 
@@ -130,15 +133,30 @@ public class DisenadorEditController extends JFrame {
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("Guardar");
-		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton.setBounds(123, 340, 90, 30);
-		contentPane.add(btnNewButton);
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Diseñador agregado");
+			}
+		});
+		btnGuardar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnGuardar.setBounds(123, 340, 90, 30);
+		contentPane.add(btnGuardar);
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(355, 340, 89, 30);
-		contentPane.add(btnNewButton_1);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame frame = new DisenadorController();
+                frame.setSize(582,490);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                close();
+			}
+		});
+		btnCancelar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnCancelar.setBounds(355, 340, 89, 30);
+		contentPane.add(btnCancelar);
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
@@ -165,5 +183,9 @@ public class DisenadorEditController extends JFrame {
 		lblNewLabel_1_1_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		lblNewLabel_1_1_1.setBounds(123, 271, 90, 14);
 		contentPane.add(lblNewLabel_1_1_1);
+	}
+	
+	private void close() {
+		this.dispose();
 	}
 }

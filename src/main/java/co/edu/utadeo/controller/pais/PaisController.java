@@ -138,7 +138,12 @@ public class PaisController extends JFrame {
 		JButton btnAgregar = new JButton("Agregar");
 		btnAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(null, "Evento agregado");
+				 JFrame frame = new PaisEditController();
+	                frame.setSize(582,490);
+	                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.setLocationRelativeTo(null);
+	                frame.setVisible(true);
+	                close();			
 			}
 		});
 		btnAgregar.setBounds(63, 368, 89, 23);
@@ -152,6 +157,11 @@ public class PaisController extends JFrame {
 		
 		
 	}
+	
+	private void close() {
+		this.dispose();
+	}
+	
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {

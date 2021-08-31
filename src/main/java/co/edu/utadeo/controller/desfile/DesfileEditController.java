@@ -20,17 +20,20 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import com.toedter.components.JSpinField;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DesfileEditController extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtCodigo;
 
 	/**
 	 * Create the frame.
@@ -129,24 +132,39 @@ public class DesfileEditController extends JFrame {
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("Guardar");
-		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton.setBounds(128, 369, 90, 30);
-		contentPane.add(btnNewButton);
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Evento agregado");
+			}
+		});
+		btnGuardar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnGuardar.setBounds(128, 369, 90, 30);
+		contentPane.add(btnGuardar);
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(354, 369, 89, 30);
-		contentPane.add(btnNewButton_1);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame frame = new DesfileController();
+                frame.setSize(582,490);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                close();
+			}
+		});
+		btnCancelar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnCancelar.setBounds(354, 369, 89, 30);
+		contentPane.add(btnCancelar);
 		
-		textField = new JTextField();
-		textField.setBounds(252, 59, 200, 30);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setBounds(252, 59, 200, 30);
+		contentPane.add(txtCodigo);
+		txtCodigo.setColumns(10);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(252, 100, 200, 30);
-		contentPane.add(dateChooser);
+		JDateChooser dateFecha = new JDateChooser();
+		dateFecha.setBounds(252, 100, 200, 30);
+		contentPane.add(dateFecha);
 		
 		JLabel lblNewLabel_2 = new JLabel("Fecha");
 		lblNewLabel_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
@@ -178,24 +196,27 @@ public class DesfileEditController extends JFrame {
 		lblNewLabel_2_5.setBounds(116, 309, 65, 14);
 		contentPane.add(lblNewLabel_2_5);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(252, 141, 202, 30);
-		contentPane.add(comboBox);
+		JComboBox comboBox_Evento = new JComboBox();
+		comboBox_Evento.setBounds(252, 141, 202, 30);
+		contentPane.add(comboBox_Evento);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(252, 182, 202, 30);
-		contentPane.add(comboBox_1);
+		JComboBox comboBox_Diseñador = new JComboBox();
+		comboBox_Diseñador.setBounds(252, 182, 202, 30);
+		contentPane.add(comboBox_Diseñador);
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(252, 220, 202, 30);
-		contentPane.add(comboBox_2);
+		JComboBox comboBox_Pabellon = new JComboBox();
+		comboBox_Pabellon.setBounds(252, 220, 202, 30);
+		contentPane.add(comboBox_Pabellon);
 		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(252, 261, 202, 30);
-		contentPane.add(comboBox_3);
+		JComboBox comboBox_Artista = new JComboBox();
+		comboBox_Artista.setBounds(252, 261, 202, 30);
+		contentPane.add(comboBox_Artista);
 		
-		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setBounds(252, 302, 202, 30);
-		contentPane.add(comboBox_4);
+		JComboBox comboBox_Coleccion = new JComboBox();
+		comboBox_Coleccion.setBounds(252, 302, 202, 30);
+		contentPane.add(comboBox_Coleccion);
+	}
+	private void close() {
+		this.dispose();
 	}
 }

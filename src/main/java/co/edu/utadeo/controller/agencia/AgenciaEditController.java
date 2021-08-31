@@ -20,20 +20,23 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import com.toedter.components.JSpinField;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AgenciaEditController extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField txtCodigo;
+	private JTextField txtNombre;
+	private JTextField txtCorreo;
+	private JTextField txtDueño;
+	private JTextField txtAgenciaPadre;
 
 	/**
 	 * Create the frame.
@@ -127,19 +130,19 @@ public class AgenciaEditController extends JFrame {
 		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 18));
 		contentPane.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(242, 75, 200, 30);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setBounds(242, 75, 200, 30);
+		contentPane.add(txtCodigo);
+		txtCodigo.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Codigo");
 		lblNewLabel_1.setBounds(99, 82, 65, 14);
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(242, 157, 200, 30);
-		contentPane.add(dateChooser);
+		JDateChooser dateCreacion = new JDateChooser();
+		dateCreacion.setBounds(242, 157, 200, 30);
+		contentPane.add(dateCreacion);
 		
 		JLabel lblNewLabel_2 = new JLabel("Fecha Creaci\u00F3n");
 		lblNewLabel_2.setBounds(99, 161, 106, 14);
@@ -151,10 +154,10 @@ public class AgenciaEditController extends JFrame {
 		lblNewLabel_4.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_4);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(242, 116, 200, 30);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtNombre = new JTextField();
+		txtNombre.setBounds(242, 116, 200, 30);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Nombre");
 		lblNewLabel_3.setBounds(99, 123, 57, 14);
@@ -166,28 +169,43 @@ public class AgenciaEditController extends JFrame {
 		lblNewLabel_5.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_5);
 		
-		JButton btnNewButton = new JButton("Guardar");
-		btnNewButton.setBounds(127, 389, 90, 30);
-		contentPane.add(btnNewButton);
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Agencia agregado");
+			}
+		});
+		btnGuardar.setBounds(127, 389, 90, 30);
+		contentPane.add(btnGuardar);
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setBounds(353, 389, 89, 30);
-		contentPane.add(btnNewButton_1);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 JFrame frame = new AgenciaController();
+	                frame.setSize(582,490);
+	                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.setLocationRelativeTo(null);
+	                frame.setVisible(true);
+	                close();
+			}
+		});
+		btnCancelar.setBounds(353, 389, 89, 30);
+		contentPane.add(btnCancelar);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(242, 198, 200, 30);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		txtCorreo = new JTextField();
+		txtCorreo.setBounds(242, 198, 200, 30);
+		contentPane.add(txtCorreo);
+		txtCorreo.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(242, 244, 200, 30);
-		contentPane.add(textField_3);
+		txtDueño = new JTextField();
+		txtDueño.setColumns(10);
+		txtDueño.setBounds(242, 244, 200, 30);
+		contentPane.add(txtDueño);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(242, 285, 200, 30);
-		contentPane.add(textField_4);
+		txtAgenciaPadre = new JTextField();
+		txtAgenciaPadre.setColumns(10);
+		txtAgenciaPadre.setBounds(242, 285, 200, 30);
+		contentPane.add(txtAgenciaPadre);
 		
 		JLabel lblNewLabel_6 = new JLabel("AgenciaPadre");
 		lblNewLabel_6.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
@@ -199,8 +217,11 @@ public class AgenciaEditController extends JFrame {
 		lblNewLabel_7.setBounds(99, 340, 46, 14);
 		contentPane.add(lblNewLabel_7);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(242, 329, 200, 30);
-		contentPane.add(comboBox);
+		JComboBox comboBox_Pais = new JComboBox();
+		comboBox_Pais.setBounds(242, 329, 200, 30);
+		contentPane.add(comboBox_Pais);
+	}
+	private void close() {
+		this.dispose();
 	}
 }
