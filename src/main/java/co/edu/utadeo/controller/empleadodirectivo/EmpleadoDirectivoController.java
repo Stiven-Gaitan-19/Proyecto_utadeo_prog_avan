@@ -1,40 +1,38 @@
 package co.edu.utadeo.controller.empleadodirectivo;
 
+import co.edu.utadeo.domain.EmpleadoDirectivo;
+import co.edu.utadeo.model.EmpleadoDirectivoDAO;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTree;
 import java.awt.Font;
-import javax.swing.JToggleButton;
-import javax.swing.JTable;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JDesktopPane;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 public class EmpleadoDirectivoController extends JFrame {
+
 	private JTable table;
+	private EmpleadoDirectivoDAO empleadoDAO;
+	private String[] columnsTable = {"Carnet","Nombre", "Paga", "Celular", "Universidad"};
 
 	/**
 	 * Create the frame.
 	 */
 	public EmpleadoDirectivoController() {
+
+		empleadoDAO = new EmpleadoDirectivoDAO();
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 582, 490);
 
@@ -161,11 +159,27 @@ public class EmpleadoDirectivoController extends JFrame {
 		panel.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 22));
 
-		table = new JTable();
-		table.setBounds(63, 267, 370, -204);
-		panel.add(table);
+		initializeTable(panel);
 
+	}
 
+	private void initializeTable(JPanel panel){
+		List<EmpleadoDirectivo> empleados = empleadoDAO.findAll();
+		Object[][] data = new String[empleados.size()][5];
+		for(int i=0; i<empleados.size(); i++){
+			data[i][0] = String.valueOf(empleados.get(i).getCarnet());
+			data[i][1] = String.valueOf(empleados.get(i).getNombre());
+			data[i][2] = String.valueOf(empleados.get(i).getPaga());
+			data[i][3] = String.valueOf(empleados.get(i).getCelular());
+			data[i][4] = String.valueOf(empleados.get(i).getUniversidad());
+		}
+
+		table = new JTable(new DefaultTableModel(data, columnsTable));
+
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(50, 110, 470, 211);
+
+		panel.add(scrollPane);
 	}
 
 	private void close() {
