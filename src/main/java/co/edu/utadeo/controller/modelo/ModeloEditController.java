@@ -20,11 +20,14 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import com.toedter.components.JSpinField;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ModeloEditController extends JFrame {
 
@@ -166,10 +169,25 @@ public class ModeloEditController extends JFrame {
 		contentPane.add(lblNewLabel_5);
 		
 		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Modelo agregada");
+			}
+		});
 		btnGuardar.setBounds(127, 389, 90, 30);
 		contentPane.add(btnGuardar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 JFrame frame = new ModeloController();
+	                frame.setSize(582,490);
+	                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.setLocationRelativeTo(null);
+	                frame.setVisible(true);
+	                close();
+			}
+		});
 		btnCancelar.setBounds(353, 389, 89, 30);
 		contentPane.add(btnCancelar);
 		
@@ -200,5 +218,8 @@ public class ModeloEditController extends JFrame {
 		JComboBox CbxPais = new JComboBox();
 		CbxPais.setBounds(242, 285, 200, 30);
 		contentPane.add(CbxPais);
+	}
+	private void close() {
+		this.dispose();
 	}
 }

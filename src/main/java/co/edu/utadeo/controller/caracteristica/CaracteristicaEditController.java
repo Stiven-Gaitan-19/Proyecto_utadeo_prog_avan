@@ -20,18 +20,21 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import com.toedter.components.JSpinField;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CaracteristicaEditController extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtNombre;
+	private JTextField txtDescripcion;
 
 	/**
 	 * Create the frame.
@@ -42,46 +45,46 @@ public class CaracteristicaEditController extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
-	    JMenuBar menuBar = new JMenuBar();
+
+		JMenuBar menuBar = new JMenuBar();
 		menuBar.setEnabled(false);
 		menuBar.setBackground(SystemColor.control);
 		setJMenuBar(menuBar);
-		
+
 		JMenu mnNewMenu = new JMenu("Men\u00FA");
 		mnNewMenu.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.setForeground(Color.BLACK);
 		mnNewMenu.setBackground(Color.LIGHT_GRAY);
 		menuBar.add(mnNewMenu);
-		
+
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Agencia");
 		mntmNewMenuItem_4.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_4);
-		
+
 		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Aparicion\r\n");
 		mntmNewMenuItem_5.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_5);
-		
+
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Artista");
 		mntmNewMenuItem_6.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_6);
-		
+
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Caracteristica");
 		mntmNewMenuItem_7.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_7);
-		
+
 		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Coleccion");
 		mntmNewMenuItem_8.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_8);
-		
+
 		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Desfile");
 		mntmNewMenuItem_9.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_9);
-		
+
 		JMenuItem mntmNewMenuItem_10 = new JMenuItem("Dise\u00F1ador");
 		mntmNewMenuItem_10.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_10);
-		
+
 		JMenuItem mntmNewMenuItemEmpDirec = new JMenuItem("Empleado Directivo");
 		mntmNewMenuItemEmpDirec.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItemEmpDirec);
@@ -89,80 +92,100 @@ public class CaracteristicaEditController extends JFrame {
 		JMenuItem mntmNewMenuItemEmpRaso = new JMenuItem("Empleado Raso");
 		mntmNewMenuItemEmpRaso.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItemEmpRaso);
-		
+
 		JMenuItem mntmNewMenuItem_11 = new JMenuItem("Evento");
 		mntmNewMenuItem_11.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_11);
-		
+
 		JMenuItem mntmNewMenuItem_12 = new JMenuItem("Foto");
 		mntmNewMenuItem_12.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_12);
-		
+
 		JMenuItem mntmNewMenuItem_13 = new JMenuItem("GeneroMusical");
 		mntmNewMenuItem_13.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_13);
-		
+
 		JMenuItem mntmNewMenuItem_14 = new JMenuItem("Modelo");
 		mntmNewMenuItem_14.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_14);
-		
-		
+
+
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Pabellon");
 		mntmNewMenuItem_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_1);
-		
+
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Pais");
 		mntmNewMenuItem_2.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_2);
-		
+
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Portafolio");
 		mntmNewMenuItem_3.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane.setLayout(null);
-	    
+
 		JLabel lblNewLabel = new JLabel("Editar-Crear Caracteristicas");
 		lblNewLabel.setBounds(179, 11, 230, 37);
 		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 18));
 		contentPane.add(lblNewLabel);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Nombre");
 		lblNewLabel_1.setBounds(110, 104, 65, 14);
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("Modelo");
 		lblNewLabel_2.setBounds(110, 253, 106, 14);
 		lblNewLabel_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_2);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("Descripcion");
 		lblNewLabel_3.setBounds(110, 177, 75, 14);
 		lblNewLabel_3.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_3);
-		
-		JButton btnNewButton = new JButton("Guardar");
-		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton.setBounds(123, 325, 90, 30);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(353, 325, 89, 30);
-		contentPane.add(btnNewButton_1);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		comboBox.setBounds(242, 245, 200, 30);
-		contentPane.add(comboBox);
-		
-		textField = new JTextField();
-		textField.setBounds(242, 97, 200, 30);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(242, 170, 200, 30);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Caracteristica agregado");
+
+			}
+		});
+		btnGuardar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnGuardar.setBounds(123, 325, 90, 30);
+		contentPane.add(btnGuardar);
+
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame frame = new CaracteristicaController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				close();
+			}
+		});
+		btnCancelar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnCancelar.setBounds(353, 325, 89, 30);
+		contentPane.add(btnCancelar);
+
+		JComboBox comboBox_Modelo = new JComboBox();
+		comboBox_Modelo.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		comboBox_Modelo.setBounds(242, 245, 200, 30);
+		contentPane.add(comboBox_Modelo);
+
+		txtNombre = new JTextField();
+		txtNombre.setBounds(242, 97, 200, 30);
+		contentPane.add(txtNombre);
+		txtNombre.setColumns(10);
+
+		txtDescripcion = new JTextField();
+		txtDescripcion.setBounds(242, 170, 200, 30);
+		contentPane.add(txtDescripcion);
+		txtDescripcion.setColumns(10);
+	}
+
+	private void close() {
+		this.dispose();
 	}
 }

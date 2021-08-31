@@ -20,11 +20,14 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import com.toedter.components.JSpinField;
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GeneroEditController extends JFrame {
 
@@ -134,11 +137,30 @@ public class GeneroEditController extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Genero agregado");
+			}
+		});
 		btnGuardar.setBounds(124, 320, 90, 30);
 		contentPane.add(btnGuardar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 JFrame frame = new GeneroController();
+	                frame.setSize(582,490);
+	                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.setLocationRelativeTo(null);
+	                frame.setVisible(true);
+	                close();
+			}
+		});
 		btnCancelar.setBounds(327, 320, 89, 30);
 		contentPane.add(btnCancelar);
+	}
+	
+	private void close() {
+		this.dispose();
 	}
 }

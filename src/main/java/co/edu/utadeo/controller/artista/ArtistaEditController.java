@@ -20,12 +20,18 @@ import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import com.toedter.components.JSpinField;
+
+import co.edu.utadeo.controller.disenador.DisenadorEditController;
+
 import javax.swing.JSlider;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ArtistaEditController extends JFrame {
 
@@ -126,7 +132,7 @@ public class ArtistaEditController extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Codigo");
-		lblNewLabel_1.setBounds(110, 104, 65, 14);
+		lblNewLabel_1.setBounds(110, 104, 65, 23);
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
 		
@@ -140,15 +146,30 @@ public class ArtistaEditController extends JFrame {
 		lblNewLabel_3.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_3);
 		
-		JButton btnNewButton = new JButton("Guardar");
-		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton.setBounds(123, 325, 90, 30);
-		contentPane.add(btnNewButton);
+		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Evento agregado");
+			}
+		});
+		btnGuardar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnGuardar.setBounds(123, 325, 90, 30);
+		contentPane.add(btnGuardar);
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(353, 325, 89, 30);
-		contentPane.add(btnNewButton_1);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame frame = new ArtistaController();
+                frame.setSize(582,490);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                close();
+			}
+		});
+		btnCancelar.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
+		btnCancelar.setBounds(353, 325, 89, 30);
+		contentPane.add(btnCancelar);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -164,5 +185,9 @@ public class ArtistaEditController extends JFrame {
 		textField_1.setBounds(242, 170, 200, 30);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
+	}
+	
+	private void close() {
+		this.dispose();
 	}
 }
