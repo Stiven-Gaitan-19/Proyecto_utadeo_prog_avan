@@ -200,9 +200,9 @@ public class DesfileEditController extends JFrame {
 		comboBox_Evento.setBounds(252, 141, 202, 30);
 		contentPane.add(comboBox_Evento);
 		
-		JComboBox comboBox_Diseñador = new JComboBox();
-		comboBox_Diseñador.setBounds(252, 182, 202, 30);
-		contentPane.add(comboBox_Diseñador);
+		JComboBox comboBox_Disenador = new JComboBox();
+		comboBox_Disenador.setBounds(252, 182, 202, 30);
+		contentPane.add(comboBox_Disenador);
 		
 		JComboBox comboBox_Pabellon = new JComboBox();
 		comboBox_Pabellon.setBounds(252, 220, 202, 30);
