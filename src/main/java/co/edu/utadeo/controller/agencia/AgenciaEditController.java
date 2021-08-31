@@ -35,7 +35,7 @@ public class AgenciaEditController extends JFrame {
 	private JTextField txtCodigo;
 	private JTextField txtNombre;
 	private JTextField txtCorreo;
-	private JTextField txtDueño;
+	private JTextField txtDueno;
 	private JTextField txtAgenciaPadre;
 
 	/**
@@ -197,10 +197,10 @@ public class AgenciaEditController extends JFrame {
 		contentPane.add(txtCorreo);
 		txtCorreo.setColumns(10);
 		
-		txtDueño = new JTextField();
-		txtDueño.setColumns(10);
-		txtDueño.setBounds(242, 244, 200, 30);
-		contentPane.add(txtDueño);
+		txtDueno = new JTextField();
+		txtDueno.setColumns(10);
+		txtDueno.setBounds(242, 244, 200, 30);
+		contentPane.add(txtDueno);
 		
 		txtAgenciaPadre = new JTextField();
 		txtAgenciaPadre.setColumns(10);
