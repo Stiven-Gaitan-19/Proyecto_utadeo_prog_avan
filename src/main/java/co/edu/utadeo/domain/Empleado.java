@@ -9,7 +9,6 @@ import java.util.Objects;
 public class Empleado {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer carnet;
 
     @Column(nullable = false)
