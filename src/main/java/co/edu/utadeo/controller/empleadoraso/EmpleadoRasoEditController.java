@@ -31,6 +31,9 @@ public class EmpleadoRasoEditController extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
 
 	/**
 	 * Create the frame.
@@ -115,38 +118,68 @@ public class EmpleadoRasoEditController extends JFrame {
 		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane.setLayout(null);
 	    
-		JLabel lblNewLabel = new JLabel("Editar-Crear EmpleadoRaso");
-		lblNewLabel.setBounds(180, 33, 272, 37);
+		JLabel lblNewLabel = new JLabel("Editar-Crear Empleado Raso");
+		lblNewLabel.setBounds(164, 11, 272, 37);
 		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 18));
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Carne");
-		lblNewLabel_1.setBounds(106, 171, 65, 14);
+		lblNewLabel_1.setBounds(117, 93, 65, 14);
 		lblNewLabel_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("Guardar");
 		btnNewButton.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton.setBounds(123, 325, 90, 30);
+		btnNewButton.setBounds(125, 374, 90, 30);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Cancelar");
 		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(353, 325, 89, 30);
+		btnNewButton_1.setBounds(350, 374, 89, 30);
 		contentPane.add(btnNewButton_1);
 		
 		textField = new JTextField();
-		textField.setBounds(242, 164, 200, 30);
+		textField.setBounds(250, 239, 200, 30);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Evento");
 		lblNewLabel_1_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
-		lblNewLabel_1_1.setBounds(106, 225, 76, 14);
+		lblNewLabel_1_1.setBounds(117, 297, 76, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
+		JLabel lblNewLabel_1_2 = new JLabel("Nombre");
+		lblNewLabel_1_2.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_1_2.setBounds(117, 146, 65, 14);
+		contentPane.add(lblNewLabel_1_2);
+		
+		JLabel lblNewLabel_1_3 = new JLabel("Telefono");
+		lblNewLabel_1_3.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_1_3.setBounds(117, 246, 65, 14);
+		contentPane.add(lblNewLabel_1_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(250, 86, 200, 30);
+		contentPane.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(250, 139, 200, 30);
+		contentPane.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(250, 189, 200, 30);
+		contentPane.add(textField_4);
+		
+		JLabel lblNewLabel_1_2_1 = new JLabel("Paga");
+		lblNewLabel_1_2_1.setFont(new Font("Roboto Medium", Font.PLAIN, 14));
+		lblNewLabel_1_2_1.setBounds(117, 197, 65, 14);
+		contentPane.add(lblNewLabel_1_2_1);
+		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(242, 222, 200, 30);
+		comboBox.setBounds(250, 290, 200, 30);
 		contentPane.add(comboBox);
 	}
 }
