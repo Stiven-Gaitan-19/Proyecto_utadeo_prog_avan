@@ -3,8 +3,7 @@ package co.edu.utadeo.controller.evento;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import co.edu.utadeo.controller.agencia.AgenciaController;
@@ -16,6 +15,7 @@ import co.edu.utadeo.controller.desfile.DesfileController;
 import co.edu.utadeo.controller.disenador.DisenadorController;
 import co.edu.utadeo.controller.disenador.DisenadorEditController;
 import co.edu.utadeo.controller.empleadodirectivo.EmpleadoDirectivoController;
+import co.edu.utadeo.controller.empleadodirectivo.EmpleadoDirectivoEditController;
 import co.edu.utadeo.controller.empleadoraso.EmpleadoRasoController;
 import co.edu.utadeo.controller.foto.FotoController;
 import co.edu.utadeo.controller.genero.GeneroController;
@@ -23,36 +23,36 @@ import co.edu.utadeo.controller.modelo.ModeloController;
 import co.edu.utadeo.controller.pabellon.PabellonController;
 import co.edu.utadeo.controller.pais.PaisController;
 import co.edu.utadeo.controller.portafolio.PortafolioController;
+import co.edu.utadeo.domain.EmpleadoDirectivo;
+import co.edu.utadeo.domain.Evento;
+import co.edu.utadeo.model.EmpleadoDirectivoDAO;
+import co.edu.utadeo.model.EventoDAO;
 
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTree;
 import java.awt.Font;
-import javax.swing.JToggleButton;
-import javax.swing.JTable;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JDesktopPane;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 public class EventoController extends JFrame {
+
 	private JTable table;
+	private EventoDAO eventoDAO;
+	private String[] columnsTable = {"Codigo", "Nombre", "Fecha Inicio", "Fecha Fin", "Empleado Direc"};
 
 	/**
 	 * Create the frame.
 	 */
 	public EventoController() {
+
+		eventoDAO = new EventoDAO();
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 582, 490);
 		
@@ -321,6 +321,17 @@ public class EventoController extends JFrame {
 		btnNewButton_2.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		
 		JButton btnNewButton_1 = new JButton("Editar\r\n");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame frame = new EventoEditController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
+			}
+		});
 		btnNewButton_1.setBounds(241, 368, 89, 23);
 		panel.add(btnNewButton_1);
 		btnNewButton_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -328,7 +339,13 @@ public class EventoController extends JFrame {
 		JButton btnNewButton = new JButton("Agregar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			JOptionPane.showMessageDialog(null, "Evento agregado");
+				JFrame frame = new EventoEditController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		btnNewButton.setBounds(63, 368, 89, 23);
@@ -339,16 +356,32 @@ public class EventoController extends JFrame {
 		lblNewLabel.setBounds(162, 21, 267, 52);
 		panel.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Roboto Medium", Font.PLAIN, 22));
-		
-		table = new JTable();
-		table.setBounds(63, 320, 418, -204);
-		panel.add(table);
-		
+
+		initializeTable(panel);
 		
 	}
 	
 	private void close() {
 		this.dispose();
+	}
+
+	private void initializeTable(JPanel panel){
+		List<Evento> eventos = eventoDAO.findAll();
+		Object[][] data = new String[eventos.size()][5];
+		for(int i=0; i<eventos.size(); i++){
+			data[i][0] = String.valueOf(eventos.get(i).getCode());
+			data[i][1] = String.valueOf(eventos.get(i).getNombre());
+			data[i][2] = String.valueOf(eventos.get(i).getFechaInicio());
+			data[i][3] = String.valueOf(eventos.get(i).getFechaFin());
+			data[i][4] = String.valueOf(eventos.get(i).getEmpleadoDirectivo().getNombre());
+		}
+
+		table = new JTable(new DefaultTableModel(data, columnsTable));
+
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(50, 110, 470, 211);
+
+		panel.add(scrollPane);
 	}
 	
 	private static void addPopup(Component component, final JPopupMenu popup) {

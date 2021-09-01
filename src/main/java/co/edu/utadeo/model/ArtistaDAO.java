@@ -64,7 +64,7 @@ public class ArtistaDAO implements EntityDAO<Artista>{
                 trans.rollback();
             }
         }finally {
-            session.close();
+            //session.close();
         }
         return result;
     }

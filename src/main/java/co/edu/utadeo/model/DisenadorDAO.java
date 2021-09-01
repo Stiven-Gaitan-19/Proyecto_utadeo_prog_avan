@@ -64,7 +64,7 @@ public class DisenadorDAO implements EntityDAO<Disenador>{
                 trans.rollback();
             }
         }finally {
-            session.close();
+           // session.close();
         }
         return result;
     }
