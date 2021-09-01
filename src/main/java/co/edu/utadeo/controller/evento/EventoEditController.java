@@ -406,7 +406,7 @@ public class EventoEditController extends JFrame {
 		evento.setEmpleadoDirectivo(findEmpleado((Integer) empleadosDirectivos.getSelectedItem()));
 		eventoDAO.create(evento);
 		JOptionPane.showMessageDialog(null, "Evento agregado");
-		
+
 	}
 
 	private EmpleadoDirectivo findEmpleado(Integer carnet){
@@ -416,4 +416,6 @@ public class EventoEditController extends JFrame {
 		}
 		return null;
 	}
+
 }
+

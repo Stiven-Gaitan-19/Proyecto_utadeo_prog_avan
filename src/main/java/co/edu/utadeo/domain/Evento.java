@@ -22,7 +22,7 @@ public class Evento {
     @Column(nullable = false)
     private Date fechaFin;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private EmpleadoDirectivo empleadoDirectivo;
 
     @OneToMany(mappedBy = "evento")

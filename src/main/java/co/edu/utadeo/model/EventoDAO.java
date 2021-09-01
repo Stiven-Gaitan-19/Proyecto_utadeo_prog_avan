@@ -64,7 +64,7 @@ public class EventoDAO implements EntityDAO<Evento>{
                 trans.rollback();
             }
         }finally {
-            session.close();
+            //session.close();
         }
         return result;
     }

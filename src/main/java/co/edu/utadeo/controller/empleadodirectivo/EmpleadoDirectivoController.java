@@ -65,13 +65,15 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Agencia");
 		mntmNewMenuItem_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new AgenciaController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+
+				JFrame frame = new AgenciaController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_4.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -81,12 +83,15 @@ public class EmpleadoDirectivoController extends JFrame {
 		mntmNewMenuItem_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFrame frame = new AparicionController();
-                frame.setSize(582,490);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
+
+         
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
 				frame.setResizable(false);
-                close();
+				close();
+
 			}
 		});
 		mntmNewMenuItem_5.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -95,13 +100,15 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Artista");
 		mntmNewMenuItem_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new ArtistaController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new ArtistaController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
+
 			}
 		});
 		mntmNewMenuItem_6.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -110,13 +117,14 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Caracteristica");
 		mntmNewMenuItem_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new CaracteristicaController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new CaracteristicaController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_7.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -125,13 +133,13 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Coleccion");
 		mntmNewMenuItem_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new ColeccionController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+				JFrame frame = new ColeccionController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_8.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -140,13 +148,14 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Desfile");
 		mntmNewMenuItem_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new DesfileController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new DesfileController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_9.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -155,13 +164,13 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_10 = new JMenuItem("Dise\u00F1ador");
 		mntmNewMenuItem_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				 JFrame frame = new DisenadorController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+		JFrame frame = new DisenadorController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_10.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -170,13 +179,14 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItemEmpDirec = new JMenuItem("Empleado Directivo");
 		mntmNewMenuItemEmpDirec.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new EmpleadoDirectivoController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new EmpleadoDirectivoController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItemEmpDirec.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -185,13 +195,14 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItemEmpRaso = new JMenuItem("Empleado Raso");
 		mntmNewMenuItemEmpRaso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new EmpleadoRasoController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new EmpleadoRasoController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItemEmpRaso.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -216,12 +227,13 @@ public class EmpleadoDirectivoController extends JFrame {
 		mntmNewMenuItem_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFrame frame = new FotoController();
-                frame.setSize(582,490);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-                frame.setResizable(false);
-                close();
+
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_12.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -230,6 +242,7 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_13 = new JMenuItem("GeneroMusical");
 		mntmNewMenuItem_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				 JFrame frame = new GeneroController();
 				 frame.setSize(582,490);
 				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -237,7 +250,7 @@ public class EmpleadoDirectivoController extends JFrame {
 				 frame.setVisible(true);
 				 frame.setResizable(false);
 				 close();
-			}
+				}
 		});
 		mntmNewMenuItem_13.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
 		mnNewMenu.add(mntmNewMenuItem_13);
@@ -245,13 +258,14 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_14 = new JMenuItem("Modelo");
 		mntmNewMenuItem_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new ModeloController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new ModeloController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_14.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -261,13 +275,14 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Pabellon");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new PabellonController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new PabellonController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_1.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -276,13 +291,14 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Pais");
 		mntmNewMenuItem_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new PaisController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new PaisController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_2.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -291,13 +307,14 @@ public class EmpleadoDirectivoController extends JFrame {
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Portafolio");
 		mntmNewMenuItem_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JFrame frame = new PortafolioController();
-				 frame.setSize(582,490);
-				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				 frame.setLocationRelativeTo(null);
-				 frame.setVisible(true);
-				 frame.setResizable(false);
-				 close();
+
+				JFrame frame = new PortafolioController();
+				frame.setSize(582,490);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				frame.setResizable(false);
+				close();
 			}
 		});
 		mntmNewMenuItem_3.setFont(new Font("Roboto Medium", Font.PLAIN, 12));
@@ -323,6 +340,7 @@ public class EmpleadoDirectivoController extends JFrame {
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
+				frame.setResizable(false);
 				close();
 			}
 		});
@@ -338,6 +356,7 @@ public class EmpleadoDirectivoController extends JFrame {
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
+				frame.setResizable(false);
 				close();
 			}
 		});

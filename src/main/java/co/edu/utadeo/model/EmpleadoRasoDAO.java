@@ -64,7 +64,7 @@ public class EmpleadoRasoDAO implements EntityDAO<EmpleadoRaso>{
                 trans.rollback();
             }
         }finally {
-            session.close();
+            //session.close();
         }
         return result;
     }

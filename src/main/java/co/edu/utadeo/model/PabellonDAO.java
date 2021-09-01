@@ -64,7 +64,7 @@ public class PabellonDAO implements EntityDAO<Pabellon>{
                 trans.rollback();
             }
         }finally {
-            session.close();
+            //session.close();
         }
         return result;
     }
