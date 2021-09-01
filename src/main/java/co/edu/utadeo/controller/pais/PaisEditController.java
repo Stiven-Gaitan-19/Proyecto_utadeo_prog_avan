@@ -361,6 +361,8 @@ public class PaisEditController extends JFrame {
 		this.dispose();
 	}
 	
+	
+	
 	private void savePais(){
 		String nombre = txtNombre.getText().trim();
 		

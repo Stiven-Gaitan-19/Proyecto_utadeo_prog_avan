@@ -392,6 +392,10 @@ public class PaisController extends JFrame {
 		panel.add(scrollPane);
 	}
 	
+	private void deletePais() {
+		
+	}
+	
 	private void close() {
 		this.dispose();
 	}
